@@ -13,6 +13,7 @@ out/
 .turbo/
 coverage/
 .vscode-test/
+.next
 
 # TypeScript
 *.tsbuildinfo
@@ -41,7 +42,7 @@ ehthumbs.db
 Desktop.ini
 
 # Environment files (если появятся)
-apps/api/.env
+.env
 .env.local
 .env.*.local
 apps/api/.env
