@@ -65,7 +65,7 @@ jobs:
 
       - name: Build pruned Landing image
         run: |
-          pnpm dlx turbo prune --scope=@mnemos/landing --docker --out-dir .docker/landing
+          pnpm dlx turbo prune --scope=@mnemos-zero/landing --docker --out-dir .docker/landing
 
           cp tsconfig.base.json .docker/landing/tsconfig.base.json
 
@@ -81,7 +81,7 @@ jobs:
 
       - name: Build pruned API image
         run: |
-          pnpm dlx turbo prune --scope=@mnemos/api --docker --out-dir .docker/api
+          pnpm dlx turbo prune --scope=@mnemos-zero/api --docker --out-dir .docker/api
 
           cp tsconfig.base.json .docker/api/tsconfig.base.json
 
