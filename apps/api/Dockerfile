@@ -25,8 +25,10 @@ COPY tsconfig.base.json ./
 RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store \
     pnpm install --frozen-lockfile
 
-# build + deploy
+RUN pnpm --filter @mnemos-zero/api prisma:generate
 RUN pnpm --filter @mnemos-zero/api build
+
+ENV PRISMA_SKIP_POSTINSTALL_GENERATE=true
 RUN pnpm --filter @mnemos-zero/api deploy --prod /out
 
 # ---------- runtime ----------
