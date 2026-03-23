@@ -10,7 +10,7 @@
     "swagger:export": "curl http://localhost:4000/docs/json -o ../../packages/types/swagger.json",
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev --name init",
-    "prisma:migrate:deploy": "prisma migrate deploy",
+    "prisma:migrate:deploy": "prisma migrate deploy"
   },
   "dependencies": {
     "@fastify/cors": "^11.2.0",
