@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mnemos logo mark">
+  <defs>
+    <linearGradient id="mnemosGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#020617" />
+  <path
+    fill="url(#mnemosGradient)"
+    d="M18 20c0-3.314 2.686-6 6-6h16c3.314 0 6 2.686 6 6v24c0 3.314-2.686 6-6 6H24c-3.314 0-6-2.686-6-6zm8 0v24h12c1.105 0 2-.895 2-2V22c0-1.105-.895-2-2-2z"
+  />
+  <circle cx="24" cy="24" r="4" fill="#f8fafc" />
+</svg>
