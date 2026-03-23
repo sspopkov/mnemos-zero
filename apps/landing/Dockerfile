@@ -17,7 +17,7 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store \
     pnpm install --frozen-lockfile
 
 # build landing
-RUN pnpm --filter @mnemos/landing build
+RUN pnpm --filter @mnemos-zero/landing build
 
 # ---------- runtime ----------
 FROM node:20-bookworm-slim

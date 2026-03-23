@@ -27,8 +27,8 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store \
     pnpm install --frozen-lockfile
 
 # build + deploy
-RUN pnpm --filter @mnemos/api build
-RUN pnpm --filter @mnemos/api deploy --prod /out
+RUN pnpm --filter @mnemos-zero/api build
+RUN pnpm --filter @mnemos-zero/api deploy --prod /out
 
 # ---------- runtime ----------
 FROM base AS runtime
