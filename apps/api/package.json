@@ -20,12 +20,12 @@
     "@prisma/client": "^7.5.0",
     "dotenv": "^17.3.1",
     "fastify": "^5.8.4",
+    "prisma": "^7.5.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
     "@prisma/adapter-pg": "^7.5.0",
     "@types/node": "^25.5.0",
-    "prisma": "^7.5.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
