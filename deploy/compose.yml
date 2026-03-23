@@ -39,7 +39,7 @@ services:
         condition: service_healthy
 
   migrate:
-    image: mnemos-api-migrate:${MNEMOS_TAG:-latest}
+    image: mnemos-api:${MNEMOS_TAG:-latest}
     container_name: mnemos-api-migrate
     restart: "no"
 
@@ -49,6 +49,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    command: ["sh", "-lc", "npx prisma migrate deploy"]
 
   landing:
     image: mnemos-landing:${MNEMOS_TAG:-latest}

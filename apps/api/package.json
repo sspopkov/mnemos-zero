@@ -10,21 +10,22 @@
     "swagger:export": "curl http://localhost:4000/docs/json -o ../../packages/types/swagger.json",
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev --name init",
-    "prisma:migrate:deploy": "prisma migrate deploy"
+    "prisma:migrate:deploy": "prisma migrate deploy",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@fastify/cors": "^11.2.0",
     "@fastify/swagger": "^9.7.0",
     "@fastify/swagger-ui": "^5.2.5",
+    "@prisma/adapter-pg": "^7.5.0",
     "@prisma/client": "^7.5.0",
     "dotenv": "^17.3.1",
     "fastify": "^5.8.4",
+    "prisma": "^7.5.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@prisma/adapter-pg": "^7.5.0",
     "@types/node": "^25.5.0",
-    "prisma": "^7.5.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
