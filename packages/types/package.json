@@ -1,0 +1,12 @@
+{
+  "name": "@mnemos-zero/types",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "gen:api": "orval --config ./orval.config.js"
+  },
+  "devDependencies": {
+    "orval": "8.4.0"
+  }
+}
