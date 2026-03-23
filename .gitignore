@@ -1,0 +1,60 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Output
+dist/
+build/
+out/
+.cache/
+.turbo/
+coverage/
+.vscode-test/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+*.log.*
+log/
+debug.log*
+error.log*
+
+# Editor files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Environment files (если появятся)
+apps/api/.env
+.env.local
+.env.*.local
+apps/api/.env
+apps/web/.env
+
+# Tests
+.jest/
+
+# Production web build
+C:\www\mnemos/
+
+# Misc
+*.pem
+*.crt
+*.key
+*.pfx
