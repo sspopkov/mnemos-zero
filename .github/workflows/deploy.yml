@@ -79,14 +79,23 @@ jobs:
           cd "$DEPLOY_DIR"
           MNEMOS_TAG=${MNEMOS_TAG} docker compose up -d --force-recreate landing
 
-      - name: Build pruned API image
+      - name: Build pruned API runtime image
         run: |
           pnpm dlx turbo prune --scope=@mnemos-zero/api --docker --out-dir .docker/api
 
           cp tsconfig.base.json .docker/api/tsconfig.base.json
 
           docker build \
+            --target runtime \
             -t mnemos-api:${MNEMOS_TAG} \
+            -f .docker/api/full/apps/api/Dockerfile \
+            .docker/api
+
+      - name: Build pruned API migration image
+        run: |
+          docker build \
+            --target migrate \
+            -t mnemos-api-migrate:${MNEMOS_TAG} \
             -f .docker/api/full/apps/api/Dockerfile \
             .docker/api
 

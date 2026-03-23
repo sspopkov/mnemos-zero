@@ -5,14 +5,13 @@ RUN apt-get update -y \
   && apt-get install -y --no-install-recommends openssl ca-certificates \
   && rm -rf /var/lib/apt/lists/*
 
+RUN corepack enable && corepack prepare pnpm@10.32.1 --activate
+
 # ---------- builder ----------
 FROM base AS builder
 WORKDIR /work
 
-RUN corepack enable && corepack prepare pnpm@10.32.1 --activate
-
 ENV CI=true
-ENV NODE_ENV=production
 ENV PNPM_IGNORE_SCRIPTS=false
 ARG DATABASE_URL="postgresql://dummy:dummy@127.0.0.1:5432/dummy?schema=public"
 ENV DATABASE_URL=${DATABASE_URL}
@@ -39,3 +38,12 @@ COPY --from=builder /out/ ./
 
 EXPOSE 4000
 CMD ["node", "dist/index.js"]
+
+# ---------- migrate ----------
+FROM base AS migrate
+WORKDIR /work
+ENV NODE_ENV=production
+
+COPY --from=builder /work/ ./
+
+CMD ["pnpm", "--filter", "@mnemos-zero/api", "prisma:migrate:deploy"]
